@@ -34,8 +34,9 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:timePickerMode="spinner"
-        android:layout_below="@id/description"
-        android:layout_alignParentRight="true" />
+        android:layout_below="@+id/description"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/save_button"

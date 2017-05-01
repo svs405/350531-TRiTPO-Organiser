@@ -1,18 +1,18 @@
 package com.timezone.organizer;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.database.sqlite.SQLiteDatabase;
-import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         initialiseListView();
 
         Button newEventButton = (Button) findViewById(R.id.new_event);
-        Button removeEventButton = (Button) findViewById(R.id.remove_event);
         newEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,14 +47,12 @@ public class MainActivity extends AppCompatActivity {
         startService(new Intent(this, NotificationService.class));
 
         Button newEventButton = (Button) findViewById(R.id.new_event);
-        Button removeEventButton = (Button) findViewById(R.id.remove_event);
         newEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NewEvent(v);
             }
         });
-
     }
 
 
@@ -65,8 +62,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void RemoveEvent(View view){
 
+    public void EditEvent (View view, int position, long id) {
+        Intent intent = new Intent(this, EditEventActivity.class);
+        intent.putExtra("position", position);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 
     public void initialiseListView(){
@@ -76,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
 
         List<String> names = new ArrayList<String>();
         ListView lw = (ListView) findViewById(R.id.lvMain);
+
+        lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                EditEvent(view, position, id);
+            }
+        });
 
         if (cur.moveToFirst()) {
             int indexColName = cur.getColumnIndex("name");

@@ -20,6 +20,10 @@
             android:name=".CreateEventActivity"
             android:parentActivityName=".MainActivity"></activity>
 
+        <activity
+            android:name=".EditEventActivity"
+            android:parentActivityName=".MainActivity"></activity>
+
         <service
             android:name=".NotificationService"
             android:enabled="true"
