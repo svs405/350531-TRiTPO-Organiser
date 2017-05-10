@@ -18,17 +18,16 @@
         </activity>
         <activity
             android:name=".CreateEventActivity"
-            android:parentActivityName=".MainActivity"></activity>
-
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".EditEventActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
 
         <service
             android:name=".NotificationService"
             android:enabled="true"
             android:exported="true"
-            android:process=":organizer_notification"></service>
+            android:process=":organizer_notification" />
     </application>
 
 </manifest>

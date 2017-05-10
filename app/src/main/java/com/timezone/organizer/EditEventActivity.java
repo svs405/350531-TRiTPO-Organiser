@@ -1,6 +1,7 @@
 package com.timezone.organizer;
 
 import android.annotation.TargetApi;
+import android.app.NotificationManager;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -124,8 +125,9 @@ public class EditEventActivity extends AppCompatActivity {
         Cursor cur = db.query("Events", null, null, null, null, null, null);
         cur.moveToPosition(intent.getIntExtra("position", 0));
 
-        long RowID = db.delete("Events", "id = ?", new String[] {cur.getString(cur.getColumnIndex("id"))});
-        Log.d("INSERT", "row inserted, ID = " + RowID);
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.cancel(cur.getInt(cur.getColumnIndex("id")));
+        db.delete("Events", "id = ?", new String[] {cur.getString(cur.getColumnIndex("id"))});
         db.close();
         finish();
     }

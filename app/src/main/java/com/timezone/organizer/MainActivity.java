@@ -21,17 +21,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        initialiseListView();
-
-        Button newEventButton = (Button) findViewById(R.id.new_event);
-        newEventButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NewEvent(v);
-            }
-        });
     }
 
     @Override
@@ -54,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     public void NewEvent(View view){
         Intent intent = new Intent(this, CreateEventActivity.class);
