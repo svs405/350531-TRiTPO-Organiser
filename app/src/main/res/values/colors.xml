@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="colorAccent">#ff4081</color>
+
+    <!-- VTHEME COLORS-->
+    <color name="MYwindowBackground">#370903</color>
+    <color name="MYtextColor">#f0e86c</color>>
+    <color name="MYGradColorB">#7fa40e</color>
+    <color name="MYGradColorE">#B7EF8E </color>
+    <color name="MYProgressBar">#B7EF8E </color>
+    <color name="background_material_light">#682110</color>
+    <color name="primary_material_dark">#410d0d</color>
+    <color name="secondary_text_default_material_light">#dc000000</color>
+    <color name="secondary_text_material_light">#150a02</color>
+    <color name="secondary_text_material_dark">#02ffffff</color>
+    <!-- -->
 </resources>

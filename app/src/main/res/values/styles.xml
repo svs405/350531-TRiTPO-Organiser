@@ -8,4 +8,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- my VTHEME theme !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <style name="VTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:buttonStyle">@style/VThemButton</item>
+        <item name="android:windowBackground">@color/MYwindowBackground</item>
+        <item name="android:textColorPrimary">@color/MYtextColor</item>
+        <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:textColorSecondary">@color/MYtextColor</item>
+        <item name="android:textColorSecondaryInverse">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/MYtextColor</item>
+        <item name="colorPrimaryDark">@color/MYtextColor</item>
+        <item name="colorPrimary">@color/MYwindowBackground</item>
+        <item name="android:textColorPrimaryInverse">@android:color/background_light</item>
+        <item name="android:textCursorDrawable">@color/MYtextColor</item>
+    </style>
+
+    <style name="VThemButton" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/hbutton</item>
+    </style>
+
+
 </resources>
